@@ -1,0 +1,11 @@
+---
+
+- name: get arch x86
+  set_fact:
+    arch: "{{ x86 }}"
+  when: ansible_architecture == "x86_64"
+
+- name: get arch aarch
+  set_fact:
+    arch: "{{ arm }}"
+  when: ansible_architecture == "aarch"

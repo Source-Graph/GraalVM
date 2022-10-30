@@ -1,0 +1,26 @@
+---
+- name: path in .bash_profile
+  ansible.builtin.lineinfile:
+    path: "/home/{{ ansible_user }}/.bash_profile"
+    regexp: '^export PATH='
+    line: "export PATH={{ install_path_linux }}/bin:$PATH"
+
+- name: path in .bashrc
+  ansible.builtin.lineinfile:
+    path: "/home/{{ ansible_user }}/.bashrc"
+    regexp: '^export PATH='
+    line: "export PATH={{ install_path_linux }}/bin:$PATH"
+
+- name: path in skel/.bash_profile
+  ansible.builtin.lineinfile:
+    path: "/etc/skel/.bash_profile"
+    regexp: '^export PATH='
+    line: "export PATH={{ install_path_linux }}/bin:$PATH"
+  become: true
+
+- name: path in skel/.bashrc
+  ansible.builtin.lineinfile:
+    path: "/etc/skel/.bashrc"
+    regexp: '^export PATH='
+    line: "export PATH={{ install_path_linux }}/bin:$PATH"
+  become: true

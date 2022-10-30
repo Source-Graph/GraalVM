@@ -1,0 +1,9 @@
+---
+
+# version
+vm_ver: "22.2.0"
+java_ver: "17"
+
+# dl & install
+dest_linux: "/var"
+install_path_linux: "{{ dest_linux }}/graalvm-ce-java{{ java_ver }}-{{vm_ver}}"

@@ -1,0 +1,19 @@
+---
+
+# repo
+release: "https://github.com/graalvm/graalvm-ce-builds/releases/download/"
+
+# version
+# ... see: /defaults
+
+# arch
+arm: "aarch64"
+x86: "amd64"
+
+
+# os
+linux: "linux"
+mac: "darwin"
+windows: "windows"
+
+# https://github.com/graalvm/graalvm-ce-builds/releases

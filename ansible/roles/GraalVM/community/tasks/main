@@ -1,0 +1,5 @@
+---
+
+- include_tasks: get arch
+
+- include_tasks: "{{ ansible_system }}/main"

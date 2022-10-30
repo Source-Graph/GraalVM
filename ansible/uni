@@ -1,0 +1,7 @@
+---
+- hosts: local
+  vars:
+    java_ver: 17
+
+  roles:
+  - GraalVM/community

@@ -1,0 +1,21 @@
+---
+
+- name: set download link
+  set_fact:
+    graal_dl: "{{ release }}vm-{{ vm_ver }}/graalvm-ce-java{{ java_ver }}-{{ linux }}-{{ arch }}-{{ vm_ver }}.tar.gz"
+
+- name: download Graal
+  ansible.builtin.get_url:
+    url: "{{ graal_dl }}"
+    dest: /tmp/graalvm.tar.gz
+
+
+- name: unarchive tar.gz
+  ansible.builtin.unarchive:
+    src: /tmp/graalvm.tar.gz
+    dest: "{{ dest_linux }}/"
+    remote_src: yes
+    creates: "{{ install_path_linux }}"
+  become: true
+
+- include_tasks: path
